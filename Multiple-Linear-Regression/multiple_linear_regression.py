@@ -15,6 +15,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
 
 # Importing the dataset
 dataset = pd.read_csv('50_Startups.csv')
@@ -39,3 +40,10 @@ regressor.fit(X_train, y_train)
 y_pred = regressor.predict(X_test)
 np.set_printoptions(precision=2)
 print(np.concatenate((y_pred.reshape(len(y_pred), 1), y_test.reshape(len(y_test), 1)), 1))
+
+'''
+Check your model compatibility with your dataset using 
+r-square method to check the score of your model.
+'''
+modelScore = r2_score(y_test, y_pred)
+print('\nModel Score:', modelScore)
