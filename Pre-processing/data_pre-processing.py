@@ -71,5 +71,3 @@ print(X_train)
 
 print("\nFeature scaling the X_test:")
 print(X_test)
-
- 
